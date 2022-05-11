@@ -6,7 +6,7 @@ This program will tell you how much the beer cost from a 6pack and a 12 pack. It
 Requirements:
 1. Search through the highest & lowest calories
 2. Search through the highest & lowest ABV
-3. Search through the the highest & lowest price
+3. Search through the highest & lowest price
 4. Search through the highest and lowest score
 5. Search by store
 6. Search by beer type 
