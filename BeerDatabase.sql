@@ -26,7 +26,7 @@ PRIMARY KEY (StoreID),
 FOREIGN KEY (BeerID) REFERENCES Beer(BeerID)
 )
 
--- Retrieves all the  from the twow tables 
+-- Retrieves all the values from the two tables 
 select * from BeerStore
 SElECT * From Beer
 
