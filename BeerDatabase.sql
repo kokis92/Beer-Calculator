@@ -49,9 +49,15 @@ from Beer
 WHERE ABV = 4.4
 
 --- Retrieves prices for pacifico 12 pack
-Select b.BeerName, b.Calories, b.ABV, b.BeerType, s.BeerPrice, s.StoreName
+Select b.BeerName, b.Calories, b.ABV, b.BeerType, s.BeerPrice, s.PackSize, s.StoreName
 From Beer b 
 INNER JOIN BeerStore s ON b.BeerID =s.BeerID
 WHere BeerName = 'Pacifico Clara' and PackSize = 12
 
+Select b.BeerName, s.BeerPrice, s.PackSize, s.StoreName, MIN(s.BeerPrice) AS LowerPrice
+From Beer b 
+INNER JOIN BeerStore s ON b.BeerID =s.BeerID
+WHere BeerName = 'Pacifico Clara' and PackSize = 12
+group by b.BeerName, s.BeerPrice, s.PackSize, s.StoreName
+order by s.BeerPrice ASC
 
