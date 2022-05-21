@@ -4,7 +4,7 @@ import _scproxy
 import pymssql  
 conn = pymssql.connect(server='localhost', 
     user='sa', 
-    password='Reyes2356', 
+    password='', 
     database='BeerProject')
 
 # Interacting with the database 
