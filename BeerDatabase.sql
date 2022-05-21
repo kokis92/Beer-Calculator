@@ -44,7 +44,7 @@ VALUES('Safeway',16.99, 12, 2)
 --- INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 
 --- Retrieves all the beers where ABV is equal to 4.4 
-Select BeerName, BeerType 
+Select BeerName, BeerType , ABV
 from Beer
 WHERE ABV = 4.4
 
