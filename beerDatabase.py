@@ -1,5 +1,7 @@
 #Creating a Microsoft Sql connection with python 
 #Python is running the queries from a local host 
+from getpass import getpass
+
 import _scproxy
 import pymssql  
 conn = pymssql.connect(server='localhost', 
@@ -20,11 +22,15 @@ for row in cursor:
 
 conn.close()
 """
-#prints All of the Vallues in the ther database 
+# prints All of the Vallues in the database 
 c = conn.cursor(as_dict=True)
-c.execute("SELECT * FROM Beer WHERE BeerName = 'Modelo'")
+c.execute("SELECT * FROM Beer")
+c.execute("SELECT * FROM BeerStore")
+# join two table adn get all the beers and stores from two tables
+c.execute("Select * from Beer INNER JOIN BeerStore ON Beer.BeerID = BeerStore.BeerID")
 print(c.fetchall())
 conn.commit()
+
 
 """
 c = conn.cursor(as_dict=True)
