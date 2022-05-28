@@ -24,10 +24,11 @@ conn.close()
 """
 # prints All of the Vallues in the database 
 c = conn.cursor(as_dict=True)
-c.execute("SELECT * FROM Beer")
-c.execute("SELECT * FROM BeerStore")
+# c.execute("SELECT * FROM Beer")
+# c.execute("SELECT * FROM BeerStore")
 # join two table and get all the beers and stores from two tables
-c.execute("Select BeerName, BeerPrice, PackSize, StoreName FROM Beer INNER JOIN BeerStore ON Beer.BeerID = BeerStore.BeerID, WHere BeerName = 'Pacifico Clara' and PackSize = 12")
+# Displays Pacifico beers where packsize is 12
+c.execute("Select BeerName, BeerPrice, PackSize, StoreName FROM Beer INNER JOIN BeerStore ON Beer.BeerID = BeerStore.BeerID WHERE BeerName = 'Pacifico Clara' and PackSize = 12")
 print(c.fetchall())
 conn.commit()
 
