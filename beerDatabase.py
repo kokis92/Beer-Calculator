@@ -9,7 +9,8 @@ conn = pymssql.connect(server='localhost',
     password='', 
     database='BeerProject')
 
-# Interacting with the database 
+# Interacting with the database using a loop 
+
 """
 cursor = conn.cursor(as_dict=True)
 cursor.execute('SELECT * FROM Beer WHERE BeerName=%s', 'modelo')
@@ -32,7 +33,7 @@ c.execute("Select BeerName, BeerPrice, PackSize, StoreName FROM Beer INNER JOIN 
 print(c.fetchall())
 conn.commit()
 
-# b.BeerName, s.BeerPrice, s.PackSize, s.StoreName, MIN(s.BeerPrice) AS LowerPrice
+
 
 
 """
