@@ -27,8 +27,8 @@ conn.close()
 c = conn.cursor(as_dict=True)
 # c.execute("SELECT * FROM Beer")
 # c.execute("SELECT * FROM BeerStore")
-# join two table and get all the beers and stores from two tables
-# Displays Pacifico beers where packsize is 12
+# Inner join two tables Beer table and BeerStore table
+# Displays Pacifico Clara beer where packsize is 12
 c.execute("Select BeerName, BeerPrice, PackSize, StoreName FROM Beer INNER JOIN BeerStore ON Beer.BeerID = BeerStore.BeerID WHERE BeerName = 'Pacifico Clara' and PackSize = 12")
 print(c.fetchall())
 conn.commit()
