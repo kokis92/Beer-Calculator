@@ -10,7 +10,6 @@ conn = pymssql.connect(server='localhost',
     database='BeerProject')
 
 # Interacting with the database using a loop 
-
 """
 cursor = conn.cursor(as_dict=True)
 cursor.execute('SELECT * FROM Beer WHERE BeerName=%s', 'modelo')
@@ -23,6 +22,7 @@ for row in cursor:
 
 conn.close()
 """
+
 # prints all the Values in the database 
 c = conn.cursor(as_dict=True)
 # c.execute("SELECT * FROM Beer")
@@ -32,8 +32,6 @@ c = conn.cursor(as_dict=True)
 c.execute("Select BeerName, BeerPrice, PackSize, StoreName FROM Beer INNER JOIN BeerStore ON Beer.BeerID = BeerStore.BeerID WHERE BeerName = 'Pacifico Clara' and PackSize = 12")
 print(c.fetchall())
 conn.commit()
-
-
 
 
 """
@@ -47,3 +45,4 @@ order by s.BeerPrice ASC")
 print(c.fetchall())
 conn.commit()
 """
+
