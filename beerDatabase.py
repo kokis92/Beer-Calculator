@@ -22,7 +22,7 @@ for row in cursor:
 
 conn.close()
 """
-# prints All of the Vallues in the database 
+# prints all the Values in the database 
 c = conn.cursor(as_dict=True)
 # c.execute("SELECT * FROM Beer")
 # c.execute("SELECT * FROM BeerStore")
