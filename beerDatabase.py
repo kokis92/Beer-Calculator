@@ -26,10 +26,12 @@ conn.close()
 c = conn.cursor(as_dict=True)
 c.execute("SELECT * FROM Beer")
 c.execute("SELECT * FROM BeerStore")
-# join two table adn get all the beers and stores from two tables
-c.execute("Select * from Beer INNER JOIN BeerStore ON Beer.BeerID = BeerStore.BeerID")
+# join two table and get all the beers and stores from two tables
+c.execute("Select BeerName, BeerPrice, PackSize, StoreName FROM Beer INNER JOIN BeerStore ON Beer.BeerID = BeerStore.BeerID, WHere BeerName = 'Pacifico Clara' and PackSize = 12")
 print(c.fetchall())
 conn.commit()
+
+# b.BeerName, s.BeerPrice, s.PackSize, s.StoreName, MIN(s.BeerPrice) AS LowerPrice
 
 
 """
